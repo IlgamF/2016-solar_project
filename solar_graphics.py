@@ -80,11 +80,11 @@ def draw_graph():
 
         sp = pl.subplot(222)
         pl.title(r'$r(t)$')
-        pl.plot(data[k][3], data[k][1], 2) #r(t)
+        pl.plot(data[k][3], data[k][1], 2)  # r(t)
 
         sp = pl.subplot(223)
         pl.title(r'$v(r)$')
-        pl.plot(data[k][1], data[k][2], 2) #v(r)
+        pl.plot(data[k][1], data[k][2], 2)  # v(r)
     pl.show()
     pass
 

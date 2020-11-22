@@ -1,7 +1,7 @@
 # coding: utf-8
 # license: GPLv3
 
-import numpy
+from numpy import *
 from solar_objects import Star, Planet  # импорт класса Star и Planet из solar_objects
 
 
@@ -98,6 +98,10 @@ def parse_planet_parameters(line, planet):
     pass
 
 
+def standard(x):
+    return (float(x) / 10 ** (int(log10(x)))) * 10 ** (int(log10(x)))
+
+
 def write_space_objects_data_to_file(output_filename, space_objects):
     """Сохраняет данные о космических объектах в файл.
     Строки должны иметь следующий формат:
@@ -111,8 +115,8 @@ def write_space_objects_data_to_file(output_filename, space_objects):
         for obj in space_objects:  # для каждого объекта среди всех движущихся...
             out_file.write("%s %d %s %s %s %s %s %s \n"
                            % (obj.type, obj.R, obj.color,
-                              float(obj.m) / 10**(int(numpy.log10(float(obj.m)))) * 10**(int(numpy.log10(float(obj.m)))),
-                              obj.x,
+                              standard(obj.m),
+                              standard(obj.x),
                               obj.y,
                               obj.Vx,
                               obj.Vy))
