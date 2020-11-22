@@ -99,7 +99,7 @@ def parse_planet_parameters(line, planet):
 
 
 def standard(x):
-    return (float(x) / 10 ** (int(log10(x)))) * 10 ** (int(log10(x)))
+    return (float(x) / 10 ** (int(log10(abs(x))))) * 10 ** (int(log10(abs(x))))
 
 
 def write_space_objects_data_to_file(output_filename, space_objects):
@@ -117,9 +117,9 @@ def write_space_objects_data_to_file(output_filename, space_objects):
                            % (obj.type, obj.R, obj.color,
                               standard(obj.m),
                               standard(obj.x),
-                              obj.y,
-                              obj.Vx,
-                              obj.Vy))
+                              standard(obj.y),
+                              standard(obj.Vx),
+                              standard(obj.Vy)))
         # нужно как-то сделать запись чисел в стандартном виде!
 
 
