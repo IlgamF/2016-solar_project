@@ -44,6 +44,9 @@ graph_button = []
 create_button = []
 """Кнопка Show Graphics"""
 
+# подписать оси
+# указать зависимости словами в названиях графиков
+
 
 def execution():
     """Функция исполнения -- выполняется циклически, вызывая обработку всех небесных тел,
@@ -128,11 +131,12 @@ def start_recording():
     """
     Начинает запись информации в специальный файл данных о движении всех тел от времени
     """
-    global is_recording_on
+    global is_recording_on, physical_time
     is_recording_on = True
     graph_button['text'] = "Stop recording"
     graph_button['command'] = stop_recording
     delete_previous()  # очистить предыдущие данные из файла
+    physical_time = 0
     if not perform_execution:
         start_execution()
     print('Recording began...')

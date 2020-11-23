@@ -74,16 +74,22 @@ def draw_graph():
     """
     data = read_graph()
     for k in range(len(data)):
-        sp = pl.subplot(221)
-        pl.title(r'$v(t)$')
+        pl.subplot(221)
+        pl.title('Зависимость скорости от времени')
+        pl.xlabel('время, с')
+        pl.ylabel('скорость, м/с')
         pl.plot(data[k][3], data[k][2], 2)  # v(t)
 
-        sp = pl.subplot(222)
-        pl.title(r'$r(t)$')
+        pl.subplot(222)
+        pl.title('Зависимость расстояния от времени ')
+        pl.xlabel('время, с')
+        pl.ylabel('расстояние, м')
         pl.plot(data[k][3], data[k][1], 2)  # r(t)
 
-        sp = pl.subplot(223)
-        pl.title(r'$v(r)$')
+        pl.subplot(223)
+        pl.title('Зависимость скорости от расстояния')
+        pl.xlabel('расстояние, м')
+        pl.ylabel('скорость, м/с')
         pl.plot(data[k][1], data[k][2], 2)  # v(r)
     pl.show()
     pass

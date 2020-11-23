@@ -98,8 +98,8 @@ def parse_planet_parameters(line, planet):
     pass
 
 
-def standard(x):
-    return (float(x) / 10 ** (int(log10(abs(x))))) * 10 ** (int(log10(abs(x))))
+def standard(a):
+    return (float(a) / 10 ** (int(log10(abs(a))))) * 10 ** (int(log10(abs(a))))
 
 
 def write_space_objects_data_to_file(output_filename, space_objects):
@@ -120,7 +120,6 @@ def write_space_objects_data_to_file(output_filename, space_objects):
                               standard(obj.y),
                               standard(obj.Vx),
                               standard(obj.Vy)))
-        # нужно как-то сделать запись чисел в стандартном виде!
 
 
 if __name__ == "__main__":
